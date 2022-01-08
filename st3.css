@@ -1,0 +1,303 @@
+/*Сброс CSS*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q
+{
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after
+{
+    content: '';
+    content: none;
+}
+table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*Типовые элементы*/
+
+body
+{
+    width:100%;
+    height:100%;
+    font:16px  "Times New Roman", Times, serif;
+    text-align:justify;
+
+}
+
+html
+{
+    width:100%;
+    height:100%;
+
+    font:16px  "Times New Roman", Times, serif;
+    text-align:justify;
+
+}
+
+.site-blok
+{
+    width:1920px; /* ширина сайта*/
+    margin: auto; /* выравниваем сайт по сентру*/
+
+}
+
+/*меню*/
+
+/*Для начала необходимо скрыть список с подпунктами с помощью объявления display: none;, чтобы они не отображались на веб-странице все время.
+Для отображения подпунктов нам нужно чтобы при наведении на элемент <li> список снова был преобразован в блочный элемент. Затем нам нужно сделать так, чтобы наше выпадающее подменю не смещало контент, расположенный под панелью навигации, вниз.
+Для этого мы зададим пунктам списка position: relative;, а списку, содержащему подпункты position: absolute;
+и добавим свойство top со значением 100%, чтобы абсолютно позиционированное подменю отображалось точно под ссылкой.*/
+
+
+#navbar ul
+{
+    display: none;
+    background-color: black;
+    position: absolute;
+    top: 100%;
+    z-index: 999999;
+}
+
+/*Убираем у обоих списков отступы и маркеры, установленные по умолчанию. Элементы списка с навигационными ссылками делаем плавающими, формируя горизонтальное меню, но для элементов списка,
+содержащих подпункты задаем float: none;, чтобы они отображались друг под другом.*/
+
+#navbar li:hover ul { display: block; }
+#navbar, #navbar ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: 'Inconsolata', monospace;
+}
+
+#navbar
+{
+    height: 30px;
+    background-color: #666;
+    padding-left: 700px;
+    min-width: 470px;
+}
+#navbar li
+{
+    float: left;
+    position: relative;
+    height: 100%;
+}
+#navbar li a
+{
+    display: block;
+    padding: 6px;
+    width: 100px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+#navbar ul li { float: none; }
+#navbar li:hover { background-color: grey; }
+#navbar ul li:hover { background-color: #666; }
+
+.picture {
+    position:relative;
+    width: 300px;
+    height: 200px;
+}
+
+.blok-content
+
+{
+    height:1400px;
+    background-color: grey;
+    overflow: hidden;
+    padding:10px 5px 15px 5px;
+}
+
+.blok-content p
+{
+    text-indent: 20px;
+    font:18px  "Times New Roman", Times, serif;
+    color: white;
+    z-index: 999999;
+    font-family: 'Inconsolata', monospace;
+    padding-left: 500px;
+    padding-top: 600px;
+    padding-right: 500px;
+    text-align:justify;
+}
+
+.block-right{
+    width:50%;
+    float:right;
+    padding-top: 0px;
+    padding-right:0;
+
+    height:150px;
+    font-family: 'Inconsolata', monospace;
+}
+.block-right p1
+{
+    font-weight: bold; /* то же самое что и 700 */
+}
+.block-right p3
+{
+    font-weight: bold; /* то же самое что и 700 */
+    font-size: 25px;
+    padding-left: 100px;
+}
+.block-right-under{
+    width:50%;
+    float:right;
+    padding-top: 40px;
+    padding-right:0px;
+
+    height:150px;
+    font-family: 'Inconsolata', monospace;
+}
+.block-left{
+    width:50%;
+    float:left;
+    padding-top: 280px;
+    padding-left:260px;
+
+
+    font-family: 'Inconsolata', monospace;
+}
+
+.slide {
+    width: 500px;
+    height: 300px;
+    left: 22px;
+    border: 1px solid #888;
+    position: relative;
+    text-align: center;
+}
+.slide  input {
+    display: none;
+}
+
+.slide  input + label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 8px;
+    background: rgba(90, 90, 90, 0.8);
+    border: 2px solid rgba(190, 190, 190, 0.8);
+
+    cursor: pointer;
+
+    z-index: 100;
+    position: relative;
+
+    margin-right: 4px;
+
+    top: 90%;
+    margin-top: 110px;
+    margin-left: 10px;
+
+    transition: background 0.8s ease-out 0s;
+}
+
+.slide  input + label:hover {
+    background: rgba(250, 250, 250, 0.8);
+}
+
+.slide  input:checked + label {
+    background: rgba(220, 220, 220, 0.8);
+}
+
+.slide  div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 0;
+}
+
+.slide  div {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.8s ease-out 0.1s, visibility 0.1s ease-out 0.9s;
+}
+
+img {
+    width:600px;
+    height:400px;
+}
+
+.slide  input:checked + label + div {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.8s ease-out 0.1s, visibility 0.1s ease-out 0s;
+}
+
+.slide  div  p {
+    position: absolute;
+    font-size:18px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 3px #222;
+}
+
+/*создание и размещение подвала*/
+
+.footer
+{
+    width:1840px;
+    margin: 0 auto;
+    padding:40px;
+    font-family: 'Inconsolata', monospace;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.footer a
+{
+
+    color:white;
+    text-decoration: none;
+
+}
+.footer p
+{
+
+    color:white;
+    text-decoration: none;
+}
+
